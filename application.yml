@@ -1,8 +1,10 @@
 server:
   port: 8084
 
-topic:
-  name: food.order.topic
+app:
+  kafka:
+    topic:
+      name: food.order.topic
 
 spring:
   kafka:

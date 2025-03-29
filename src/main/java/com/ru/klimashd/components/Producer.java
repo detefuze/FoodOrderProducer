@@ -13,7 +13,7 @@ import java.util.List;
 @Component
 public class Producer {
 
-    @Value("${topic.name}")
+    @Value("${app.kafka.topic.name}")
     private String orderTopic;
 
     private final ObjectMapper objectMapper;

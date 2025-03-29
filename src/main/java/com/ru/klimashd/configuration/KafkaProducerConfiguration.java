@@ -16,35 +16,35 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class KafkaProducerConfiguration {
-    private final KafkaProperties kafkaProperties;
-
-    @Autowired
-    public KafkaProducerConfiguration(KafkaProperties kafkaProperties) {
-        this.kafkaProperties = kafkaProperties;
-    }
-
-    @Bean
-    public ProducerFactory<String, String> producerFactory() {
-        // Создание объекта Properties
-        Map<String, Object> properties = new HashMap<>();
-
-        // Настройка обязательных параметров
-        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-        properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
-        properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
-
-        return new DefaultKafkaProducerFactory<>(properties);
-    }
-
-    @Bean
-    public KafkaTemplate<String, String> kafkaTemplate() {
-        return new KafkaTemplate<>(producerFactory());
-    }
-
-    @Bean
-    public ObjectMapper objectMapper() {
-        return new ObjectMapper();
-    }
+//    private final KafkaProperties kafkaProperties;
+//
+//    @Autowired
+//    public KafkaProducerConfiguration(KafkaProperties kafkaProperties) {
+//        this.kafkaProperties = kafkaProperties;
+//    }
+//
+//    @Bean
+//    public ProducerFactory<String, String> producerFactory() {
+//        // Создание объекта Properties
+//        Map<String, Object> properties = new HashMap<>();
+//
+//        // Настройка обязательных параметров
+//        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+//        properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+//        properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+//
+//        return new DefaultKafkaProducerFactory<>(properties);
+//    }
+//
+//    @Bean
+//    public KafkaTemplate<String, String> kafkaTemplate() {
+//        return new KafkaTemplate<>(producerFactory());
+//    }
+//
+//    @Bean
+//    public ObjectMapper objectMapper() {
+//        return new ObjectMapper();
+//    }
 
     @Bean
     public NewTopic topic() {

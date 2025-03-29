@@ -11,9 +11,10 @@ services:
     container_name: foodorderproducer
     hostname: foodorderproducer
     ports:
-        - "8084:8084"
+      - "8084:8084"
     environment:
-        SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      APP_KAFKA_TOPIC_NAME: "food.order.topic"
     networks:
       - food-shop-net
   kafdrop:
