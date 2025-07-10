@@ -1,6 +1,5 @@
 package com.ru.klimashd.dto;
 
-import com.ru.foodshop_entities.Product;
 
 public class BasketDTO {
 
@@ -9,14 +8,14 @@ public class BasketDTO {
     private Integer price;
     private Integer product_id;
     private Integer customer_id;
-    private Product product;
+    private ProductDTO product;
 
     public BasketDTO(String name,
                      Integer order_amount,
                      Integer price,
                      Integer product_id,
                      Integer customer_id,
-                     Product product) {
+                     ProductDTO product) {
         this.name = name;
         this.order_amount = order_amount;
         this.price = price;
@@ -31,6 +30,14 @@ public class BasketDTO {
         return order_amount;
     }
 
+    public ProductDTO getProduct() {
+        return product;
+    }
+
+    public void setProduct(ProductDTO product) {
+        this.product = product;
+    }
+
     public void setOrder_amount(Integer order_amount) {
         this.order_amount = order_amount;
     }
@@ -41,14 +48,6 @@ public class BasketDTO {
 
     public void setProduct_id(Integer product_id) {
         this.product_id = product_id;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
     }
 
     public Integer getCustomer_id() {
@@ -74,4 +73,5 @@ public class BasketDTO {
     public void setPrice(Integer price) {
         this.price = price;
     }
+
 }
